@@ -98,7 +98,6 @@ const ChessboardPage: NextPage = () => {
         break;
       default:
         break;
-    setRemaining(steps => steps--);
     }
   }
 
