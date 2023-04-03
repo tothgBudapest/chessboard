@@ -23,7 +23,8 @@ const StyledBox = styled(Box)`
 const ChessboardPage: NextPage = () => {
   const [didMount, setDidMount] = useState(false)
   const router = useRouter();
-  const { boardSize, availableStepsSize } = router.query;
+  const [boardSize, setBoardSize] = useState(1);
+  const [availableStepsSize, setAvailableStepsSize] = useState(1);
   const [remainingStepsSize, setRemaining] = useState(Number.parseInt(availableStepsSize as string));
   const [currentPosition, setCurrentPosition] = useState({ x: 0, y: 0});
   const [steps, setCurrentSteps] = useState([]);
@@ -36,6 +37,15 @@ const ChessboardPage: NextPage = () => {
       document.removeEventListener("keydown", handleArrowKeys);
     };
   }, []);
+
+  useEffect(() => {
+    if(router.isReady){
+      const { boardSize, availableStepsSize } = router.query;
+      setBoardSize(Number.parseInt(boardSize as string));
+      setAvailableStepsSize(Number.parseInt(availableStepsSize as string));
+      setRemaining(Number.parseInt(availableStepsSize as string));
+    }
+  }, [router.isReady]);
 
   useEffect(() => {
     if(didMount) {
@@ -125,10 +135,7 @@ const ChessboardPage: NextPage = () => {
     )
   }
 
-
-
   return (
-
   <Container maxWidth="lg" sx={{height: '100%'}} tabIndex={0}>
     <Stack my={5} spacing={4} direction="column" justifyContent="center" alignItems="center">
       <Grid container>

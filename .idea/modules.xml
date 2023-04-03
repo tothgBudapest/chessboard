@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Aurora/.idea/aurora.iml" filepath="$PROJECT_DIR$/../Aurora/.idea/aurora.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/chessboard.iml" filepath="$PROJECT_DIR$/.idea/chessboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/../icf_artwork/.idea/icf_artwork.iml" filepath="$PROJECT_DIR$/../icf_artwork/.idea/icf_artwork.iml" />
     </modules>

@@ -1,24 +1,6 @@
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { Box, Button, Container, Grid, Input, Stack, Typography } from '@mui/material';
-import { v4 as uuidv4 } from 'uuid';
-import styled from 'styled-components';
-import { useState, useEffect, useRef } from 'react';
-
-const StyledBox = styled(Box)`
-  width: 50px;
-  height: 50px;
-  background-color: white;
-  border: 1px solid black;
-  
-  &.odd {
-    background-color: grey;
-  }
-  
-  &.active {
-    background-color: lightyellow !important; 
-  }
-`;
+import { Box, Button, Container, Stack } from '@mui/material';
 
 const ChessResultPage: NextPage = () => {
   const router = useRouter();
